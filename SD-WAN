@@ -6,4 +6,18 @@ Objectives:
 3. Understand how SD-WAN technology has evolved.
 
 ###
-SD-WAN > 
+SD-WAN - Software-Defined Wide-Area Network (SD-WAN) is a technology that applies software-defined networking (SDN) principles to improve how wide-area networks connect across different locations.
+
+SD-WAN – Performance and Traffic Management
+> Performance Monitoring  
+SD-WAN continuously monitors WAN connections to maintain high speeds and optimize connectivity.
+
+> Application-Aware Traffic Routing  
+It regulates different types of traffic, reserving high-speed links for critical business applications.
+
+> Support for Modern Applications  
+Unlike traditional router-centric WAN, SD-WAN supports apps hosted in:
+- On-premises data centers
+- Public or private clouds
+- SaaS services (e.g., Salesforce, Dropbox, AWS)
+
