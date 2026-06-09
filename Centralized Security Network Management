@@ -1,0 +1,31 @@
+Topic: Centralized Security Network Management
+
+Objectives:
+1. Define centralized security network management.
+2. Describe the evolution of centralized Security Fabric with data fabric.
+3. Describe an example of centralized security network management.
+4. Explain the benefits of centralized security network management.
+
+###
+Centralized security network management gathers security-related data from various devices and applications into one central location.
+
+Data can be collected through logs, SNMP (Simple Network Management Protocol), or an API.
+APIs also allow scripting to reduce manual tasks and minimize human error.
+
+The objective is to provide a comprehensive view of network security status by enabling actions such as:
+- Configuring
+- Controlling
+- Operating
+- Diagnosing the security network
+
+> Data Farbric Architecture
+Defined by Gartner as a system that allows monitoring and managing data and applications from anywhere while maintaining central governance.
+As networks expand with more IoT devices, remote users, and cloud environments, security administrators require dynamic and elastic centralized network security management.
+
+> Benefits of Centralized Security Network Management
+- High-level view and broad visibility of security in the network.
+- Device integration
+- Reduction of repetitive and manual tasks
+- Easier maintenance
+- Capacity planning and performance forecasting
+- Simpler compliance audits
