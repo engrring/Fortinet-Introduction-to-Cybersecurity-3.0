@@ -1,0 +1,53 @@
+#Secure Perimeter
+
+Define a secure perimeter
+Describe the data flow through secure perimeter
+Explain limitation of secure perimeter
+
+Secure perimeter - is a form of protection that consists of device or techniques added to the edge of a managed network
+
+Seven Layers of the OSI Model
+7. Application
+Closest to the end user
+Provides network services directly to applications
+Examples: HTTP, FTP, SSH, DNS
+6. Presentation
+Translates data formats, encryption, compression
+Ensures data is readable by the receiving system
+Examples: SSL, MPEG, JPEG
+5. Session
+Manages sessions between applications
+Handles setup, coordination, and termination of communication
+Examples: APIs, Sockets, WinSock
+4. Transport
+Ensures reliable data transfer (error checking, flow control)
+Provides end-to-end communication
+Examples: TCP, UDP
+3. Network
+Determines the best path for data (routing)
+Handles logical addressing (IP addresses)
+Examples: IP, ICMP, IPSec
+2. Data Link
+Packages data into frames
+Provides error detection and flow control at the link level
+Examples: Ethernet, PPP, Switch, Bridge
+1. Physical
+Deals with hardware transmission of raw bits
+Defines cables, connectors, and signaling
+Examples: Coax, Fiber, Wireless, Hubs
+
+
+Data flow through secure perimeter
+Data Link Layer
+- ACL
+Transport Layer
+- NAT Filtering
+- Packet Filtering
+Application Layer
+- Proxy  filtering
+- Application Layer Gateway
+
+Limitations of Secure Perimeter
+BYOD
+IOT
+Cloud
