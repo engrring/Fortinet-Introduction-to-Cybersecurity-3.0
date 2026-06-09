@@ -1,0 +1,39 @@
+Topic: Zero Trust Principle
+
+Objective:
+1. Explain three principles of Zero Trust
+2. Describe the benefits of the zero trust model in contrast to the perimeter network defense model
+3. Describe some of the methods used to implement zero-trust security
+###
+Zero-trust security model is that trust must be explicitly derived from a mix of identity-based and context-based aspects
+
+> Three Principles
+1. Never trust, always verify
+2. Implement least privilege
+3. Assume your network is breached
+
+> Never trust, always verify
+Identification Process 
+- MFA
+Context-Based Aspects
+- Time and Date
+- Geolocation
+- Security Posture
+
+> Principle of Least Privilege
+- PAM
+- Protect surface
+- Kipling method
+
+> Assume Breach Principle
+-Prepare for worst
+- Microsegmentation
+
+
+> Other Zero Trust Models
+- ZTA
+- NAC
+- ZTNA
+
+Secure Perimeter - Lateral movement
+Zero Trust - Microsegmentation
