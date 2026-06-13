@@ -1,0 +1,55 @@
+Topic: SASE
+Objective:
+- Describe SASE (Secure Access Service Edge).
+- Understand the core security features of a SASE solution.
+- Understand the benefits of using SASE.
+
+####
+> Secure Access Service Edge (SASE)
+Definition: Secure Access Service Edge (SASE) combines Network-as-a-Service and Security-as-a-Service to simplify complex network infrastructure.
+Delivery Model: Provided through the cloud as an as-a-service consumption model.
+Purpose: Supports secure access for distributed and hybrid enterprise networks.
+Key Features: Enables work-from-anywhere with:
+-Firewall as a Service (FWaaS)
+-Secure Web Gateway (SWG)
+-Zero-Trust Network Access (ZTNA)
+-Threat detection functions
+Components: Built from Security Service Edge (SSE) + SD-WAN.
+
+> Benefits of SASE
+Universal Secure Access: Protects users, workloads, devices, and applications regardless of location.
+Remote Worker Security: Critical advantage for enabling safe work-from-anywhere.
+Flexible & Consistent Security: Uniform protection across environments.
+Reduced IT Cost & Complexity: Simplifies infrastructure management.
+Fast, Seamless User Experience: Ensures efficiency without sacrificing security.
+
+> Core Security Features of SASE
+1. Software-Defined Wide Area Network (SD-WAN)
+Streamlines operations with overlay structure
+Directs traffic efficiently for internet, cloud apps, and data centers
+Enables fast app deployment and policy management across locations
+
+2. Secure Web Gateway (SWG)
+Protects users, devices, and apps from online threats
+Filters malware, prevents data loss
+Enforces internet policy compliance
+
+3. Firewall-as-a-Service (FWaaS)
+Cloud-based replacement for physical firewalls
+Provides NGFW capabilities: IPS, Anti-Malware, SSL Inspection, Sandbox
+
+4. Cloud Access Security Broker (CASB)
+Secures cloud usage across public, private, and SaaS environments
+Prevents data leaks, malware infection, and compliance issues
+
+5.Zero Trust Network Access (ZTNA)
+Grants secure access to internal apps for remote users
+No automatic trust; every access attempt is verified
+Uses MFA, NAC, and policy enforcement
+
+6.Centralized Management
+Single console for all security features
+Streamlines change control, patching, outage coordination, and policy administration
+Ensures consistent policies across the organization
+
+
