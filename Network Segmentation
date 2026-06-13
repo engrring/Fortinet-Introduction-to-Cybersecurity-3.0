@@ -1,0 +1,46 @@
+Topic: Network Segmentation
+Objectives:
+1. Define network segmentation
+2. Describe how network segmentation works
+3. Explain how network segments are securely managed
+4. List the benefits of network segmentation
+
+🌐 Network Segmentation
+📖 Definition
+Divides a network into smaller, isolated segments to improve control and protection.
+Works like a submarine with compartments: if one is breached, the rest remain safe.
+
+⚙️ How It Works
+Devices and applications with similar functions are grouped into subnetworks.
+Prevents information leaks between groups.
+Example: Servers accessible from the internet are placed in a DMZ (Demilitarized Zone), separated from the internal network.
+
+🔧 Types of Network Segmentation
+Physical Segmentation
+- Uses hardware such as firewalls, routers, and switches
+- Divides networks into multiple physical sections or subnets
+
+*🛡️ Physical Segmentation (Network Layer)
+Definition: Splits a larger internal network into subnetworks at the network layer.
+Control of Data Flow: Movement between subnets is limited and controlled.
+Security Mechanisms:
+Firewall policies
+Access Control Lists (ACLs)
+
+Logical Segmentation
+- Creates smaller, manageable sections without new hardware or wiring
+- Implemented at various levels of the OSI model
+- At the Data Link Layer, logical segmentation is achieved using VLANs (Virtual Local Area Networks)
+- VLANs allow groups of devices to communicate through switches as if they were on the same wire
+
+🔐 Secure Access to Segmented Networks
+1 .Jump Box
+Acts as a proxy device with enhanced access control and limited authorization
+Provides monitored and logged access to internal devices
+Alerts IT managers if compromised
+
+2. Bastion Host
+A hardened server/computer that provides access from an external network to a private network
+Configured to withstand attacks while allowing access through a single application (e.g., secured HTML connection)
+Enables secure SSH and RDP connections to internal network segments
+  
