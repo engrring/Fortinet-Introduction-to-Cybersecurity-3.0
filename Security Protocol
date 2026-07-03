@@ -1,0 +1,89 @@
+Topic: Security Protocol
+## Security Protocols Lesson Objectives
+- Define security protocols  
+- Describe different security protocols  
+## Define security protocols
+
+- A **protocol** provides rules and methods for communication between devices  
+- A **security protocol** ensures communication is protected through encryption and authentication  
+- Analogy: two people switch to a private code language so outsiders cannot understand → similar to encryption  
+- Encryption protects data by making it readable only to legitimate participants  
+- Security protocols guarantee that only **authenticated and authorized devices** can exchange information securely  
+
+## Describe different security protocols
+
+- **Early protocols (clear text)**
+  - Email: MIME (Multipurpose Internet Mail Extensions)  
+  - Web browsing: HTTP  
+  - Remote control: Telnet  
+  - Remote access: L2TP  
+
+- **Secured protocols (encrypted/authenticated)**
+  - Email: S/MIME (Secure MIME)  
+  - Web browsing: HTTPS  
+  - Remote control: SSH  
+  - Remote access: IPsec  
+
+- **Key takeaway**
+  - As security became mandatory, protocols evolved from clear text to encrypted versions  
+  - Modern security protocols ensure confidentiality, integrity, and authentication in communication  
+## Describe different security protocols (S/MIME)
+
+- **Process**
+  - Email is first signed with the sender’s **digital signature**  
+  - Then encrypted using the receiver’s **public key**  
+  - Receiver decrypts with their **private key**  
+  - Digital signature confirms the sender’s identity  
+
+- **Security benefits**
+  - **Authentication** – verifies the sender is legitimate  
+  - **Non-repudiation** – sender cannot deny sending the message  
+  - **Data integrity** – ensures the message has not been altered  
+  - **Confidentiality** – end-to-end encryption protects the content  
+
+- **Key takeaway**
+  - S/MIME combines encryption with digital signatures  
+  - Provides strong protection for email communication  
+
+## Describe different security protocols (HTTPS/TLS)
+
+- **Process**
+  - Security is provided by **Transport Layer Security (TLS)**  
+  - Client initiates connection → server responds with its **public key**  
+  - Client generates a random **session key** and encrypts it with the server’s public key  
+  - Server decrypts the session key using its **private key**  
+  - Web traffic is then encrypted using the **symmetric session key** (faster and less resource-intensive than asymmetric encryption)  
+
+- **Benefits**
+  - Ensures confidentiality of web traffic  
+  - Symmetric encryption improves performance while maintaining security  
+
+- **Vulnerabilities**
+  - Without proper authentication between client and server, communication can be exposed to **Man-in-the-Middle (MITM) attacks**  
+  - MITM intercepts the initial HTTPS connection (default port 443) and creates two separate sessions  
+
+- **Key takeaway**
+  - HTTPS/TLS secures web browsing by combining asymmetric and symmetric encryption  
+
+  ## Describe different security protocols (SSH)
+
+- **Authentication process**
+  - Client’s public key is stored on the SSH server  
+  - Server sends a random message encrypted with the client’s public key  
+  - Client decrypts with its private key and returns the message  
+  - If the message matches, the client is authenticated  
+
+- **Encryption & integrity**
+  - Uses **Diffie-Hellman (DH) key exchange** to establish secure session keys  
+  - Integrity verification with **Message Authentication Code (MAC)** algorithm (SSH v2)  
+
+- **Functions**
+  - Secure remote control and management over port 22  
+  - File transfer via **SCP (Secure Copy Protocol)**  
+  - Supports tunneling and secure network management  
+
+- **Key takeaway**
+  - SSH provides strong authentication, encryption, and integrity checks  
+  - Essential for secure remote administration and file transfers  
+
+  - Authentication is critical to prevent MITM attacks and ensure trust between client and server  
