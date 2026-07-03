@@ -1,0 +1,100 @@
+## Network Threats Lesson Objectives
+
+- Identify common network threats  
+- Understand the effects and how to prevent threats  
+- Describe best practices used against network threats  
+
+## Identify common network threats (DoS Attacks)
+
+- **Flood Attacks**
+  - Goal: overwhelm a device with traffic  
+  - Often launched via botnets using UDP or ICMP  
+  - Examples:
+    - **Smurf Attack**: attacker spoofs victim’s IP, sends ICMP broadcast → devices reply to victim, flooding it  
+    - **Fraggle Attack**: similar to smurf, but uses spoofed UDP packets to broadcast address  
+    - **SYN Flood**: attacker initiates incomplete TCP handshakes → exhausts server resources with half-open connections  
+    - **Christmas Tree Attack**: sends TCP packets with multiple flags (FIN, URG, PSH) → requires extra processing, may crash routers/hosts  
+
+- **Ping of Death**
+  - Sends oversized packets (>65,535 bytes)  
+  - Target reassembles malformed packets → buffer overflow or crash  
+
+- **Teardrop Attack**
+  - Sends fragmented packets with overlapping payloads  
+  - Target fails to reassemble properly → system crash  
+
+- **Permanent DoS (PDoS)**
+  - Exploits device vulnerabilities to overwrite firmware with corrupted image  
+  - Device becomes unusable, requiring firmware reinstall or hardware replacement  
+
+- **Fork Bomb**
+  - Exploits Unix/Linux `fork()` system call  
+  - Creates infinite child processes → consumes CPU/memory, causes kernel panic  
+  - System slows down or crashes completely  
+
+## Understand the effects and how to prevent threats
+
+### Effects of DoS Attacks
+- Overwhelm devices → reduced resources for legitimate requests  
+
+## Describe best practices used against network threats
+
+- **Layered defense**
+  - Combine firewalls, IDS/IPS, and anomaly detection systems  
+  - Use AI-based traffic analyzers to detect unusual patterns  
+
+- **Router and firewall configuration**
+  - Block broadcast packets to prevent smurf/fraggle attacks  
+  - Apply anomaly checks to stop malformed packets (Ping of Death, Teardrop, Christmas tree)  
+
+- **System hardening**
+  - Limit number of processes per user → prevents fork bombs  
+  - Regularly patch and update firmware/software to close vulnerabilities  
+
+- **Traffic management**
+  - Implement rate limiting and filtering to control floods  
+  - Use DoS sensors to keep traffic within expected thresholds  
+
+- **Monitoring and response**
+  - Continuously monitor logs and network behavior  
+  - Establish incident response plans for quick recovery  
+
+- **Segmentation**
+  - Separate critical systems from general traffic  
+  - Reduce risk of widespread
+- Cause buffer overflows, crashes, or reboots (Ping of Death, Teardrop)  
+- Exhaust server resources with half-open connections (SYN flood)  
+- Render devices permanently unusable (PDoS)  
+- Slow down or lock systems by consuming CPU/memory (Fork Bomb)  
+- Disrupt normal network operations and availability  
+
+### Prevention Methods
+- **Firewalls**
+  - Perform anomaly checks on packets  
+  - Block malformed traffic (Ping of Death, Christmas tree, Teardrop)  
+- **Process limits**
+  - Restrict number of processes a user can own → prevents fork bombs  
+- **Router configuration**
+  - Prevent forwarding packets to broadcast addresses → stops smurf/fraggle attacks  
+- **DoS sensors / AI-based analyzers**
+  - Monitor traffic behavior  
+  - Detect anomalies and keep traffic within expected limits  
+- **General best practices**
+  - Patch vulnerabilities regularly  
+  - Use intrusion detection/prevention systems (IDS/IPS)  
+  - Apply rate limiting and traffic filtering  
+
+## Describe best practices used against network threats (continued)
+
+- **Close unnecessary ports**
+  - Open ports act as entry points for attackers  
+  - Use port scan tools (e.g., Nmap) to identify open ports  
+  - Close unused ports directly on servers or block them via firewall policies (e.g., FortiGate)  
+
+- **Fix known vulnerabilities**
+  - Regularly update network devices with the latest patches  
+  - Perform penetration testing to identify weaknesses  
+  - Treat vulnerabilities like “open doors/windows” in a home → must be closed to prevent intrusion  
+
+- **Hardening measures**
+  - Combine port management and patching with
