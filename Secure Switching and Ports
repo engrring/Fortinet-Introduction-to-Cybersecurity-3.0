@@ -1,0 +1,102 @@
+Topic: Secure Switching and Ports
+
+## Secure Switching Lesson Objectives
+- Define secure switching and ports  
+- Describe common threats and attacks  
+- Identify best practices for secure switching  
+
+## Define secure switching and ports
+
+- Switches operate at the **Data Link Layer (Layer 2)** of the OSI model  
+- Packets are assigned to VLANs based on the **source MAC address**  
+- Switches store:
+  - Port information and capabilities  
+  - VLAN parameters  
+  - MAC addresses of connected devices  
+- Stored in a **CAM (Content-Addressable Memory) table**  
+- Frames are forwarded to the correct port based on CAM entries  
+- Without secure switching, switches are vulnerable to **data link layer attacks**  
+
+## Define secure switching and ports
+
+- Switches operate at the **Data Link Layer (Layer 2)** of the OSI model  
+- Packets are assigned to VLANs based on the **source MAC address**  
+- Switches store:
+  - Port information and capabilities  
+  - VLAN parameters  
+  - MAC addresses of connected devices  
+- Stored in a **CAM (Content-Addressable Memory) table**  
+- Frames are forwarded to the correct port based on CAM entries  
+- Without secure switching, switches are vulnerable to **data link layer attacks**  
+
+## Describe common threats and attacks
+
+- CAM tables improve packet forwarding and reduce collisions  
+- Vulnerability: **CAM table flooding** can cause broadcast, unicast, or multicast storms  
+- Storms occur when MAC addresses are missing in the CAM table, leading to excessive traffic  
+- Attackers may exploit this to overwhelm the switch and disrupt communication  
+- Mitigation: switches can limit the number of broadcast, unknown unicast, and multicast packets per second on a port  
+- Configurable thresholds help prevent packet storms and maintain network stability  
+
+## Describe common threats and attacks (MAC Flooding)
+
+- Attack scenario: switch with one VLAN, four ports, and a CAM table entry for device C (port 3)  
+- Device C sends frames with **fake MAC addresses (E, F, G)**  
+- Switch updates CAM table with these fake entries  
+- Once CAM table is full:
+  - Switch cannot learn new MAC addresses or port mappings  
+  - Legitimate traffic (e.g., from device A to device D) is **flooded to all ports** instead of the correct one  
+- Impact: attackers can disrupt traffic flow and potentially intercept data  
+- This illustrates how **MAC flooding attacks exploit switch behavior** to compromise network security  
+
+## Identify best practices for secure switching
+
+- Limit the number of MAC address entries per port (e.g., one entry)  
+  - Prevents spoofed MAC addresses from creating additional CAM table entries  
+  - Unauthorized frames are dropped automatically  
+- Use **dynamic MAC learning**  
+  - Switch adds MAC addresses (e.g., A, D) when devices send frames  
+  - Dynamic entries expire automatically after a set time  
+- Apply **static MAC entries** for stricter policies  
+  - Manually configured MAC addresses remain fixed  
+  - Helps block MAC spoofing and flooding attacks on a port  
+- Combine dynamic and static policies for layered defense  
+- Regularly monitor CAM table activity to detect anomalies  
+
+## Identify best practices for secure switching (continued)
+
+- **Sticky MAC addresses**
+  - Learned dynamically on a port and retained until the switch is rebooted  
+  - Removes the need to manually configure static MAC addresses  
+  - Helps prevent spoofing while reducing administrative overhead  
+
+- **802.1X authentication**
+  - Requires devices to authenticate before accessing the switch  
+  - Adds an extra layer of security at the port level  
+  - Ensures only authorized devices can connect to the network  
+
+- **Layered defense approach**
+  - Combine static, dynamic, and sticky MAC policies  
+  - Use authentication protocols (like 802.1X) alongside CAM table limits  
+  - Regular monitoring and logging for suspicious activity  
+
+## Identify best practices for secure switching (continued)
+
+- **Physical security**
+  - Protect switches locally (e.g., locked closet or restricted room)  
+  - Restrict management access with authentication, authorization, and secure protocols (SSH, HTTPS)  
+
+- **Segmentation**
+  - Separate switches between internal and external networks  
+  - Prevents simultaneous compromise across different network zones  
+
+- **MAC flooding prevention**
+  - Restrict the number of MAC addresses allowed per port  
+  - Configure sticky or static MAC addresses to reduce spoofing  
+  - Use access control lists (ACLs) of verified MAC addresses  
+  - Add port authentication (IEEE 802.1X standard)  
+  - Implement port mirroring to monitor activity and trace traffic  
+
+- **Monitoring**
+  - Actively observe port activity with mirroring  
+  - Collect traffic traces for analysis and incident response  
