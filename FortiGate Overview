@@ -1,1 +1,16 @@
+Topic: FortiGate Overview
+Objectives:
+Describe FortiGate
+1. Identify some key FortiGate features
+2. Describe FortiGuard Labs
+3. Describe the Fortinet Security Fabric
+4. Describe FortiOS
 
+###
+FortiGate is a next-generation firewall (NGFW) that delivers industry‑leading enterprise security with full visibility and threat protection.
+
+## Identify some key FortiGate features
+- FortiGate models range from entry-level hardware appliances to high-end appliances  
+- FortiGate-VM (virtual appliance) provides the same protection as physical appliances  
+- Supports deployment in public and private cloud environments  
+- Ensures FortiGate can fit seamlessly into any environment  
