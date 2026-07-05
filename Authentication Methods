@@ -1,0 +1,73 @@
+# Objectives
+- Define multi-factor authentication (MFA)
+- List the four authentication methods and provide examples of each
+- Explain contextual authentication factors
+
+## Authentication Factors
+- **Inherence** → Something you are (e.g., fingerprint, facial recognition)
+- **Possession** → Something you have (e.g., smart card, mobile device)
+- **Knowledge** → Something you know (e.g., password, PIN)
+- **Behavior** → Something you do (e.g., typing rhythm, gait)
+
+## Contextual Authentication
+- Adjusts based on situation but doesn’t directly verify identity
+- Examples:
+  - Login attempt from unusual location → higher risk
+  - Time of access or device type → may trigger stricter checks
+- Used in **risk-based authentication** to strengthen security dynamically
+
+## Knowledge-Based Authentication
+- Verifies identity using information only the user and authenticator know
+- Common forms:
+  - **Passwords** → e.g., email login
+  - **PINs** → e.g., ATM transactions (requires card + PIN)
+  - **Security Questions** → e.g., "What is your favorite movie?" or "Who is your favorite author?"
+- Often combined with other factors (e.g., possession of a card + knowledge of PIN) for stronger security
+
+## Possession-Based Authentication
+- Verifies identity using something the user has
+- Examples:
+  - **Device/Token** → Hardware or software tokens
+  - **Private Key** → Digital signatures
+  - **Registered Device** → Trusted machine authentication
+  - **SMS OTPs** → One-time passwords sent via text
+- Often combined with knowledge factors (e.g., card + PIN)
+
+## Software Tokens & OTPs
+- Installed on a device (e.g., mobile phone)
+- Generate one-time passwords (OTPs) using algorithms:
+  - **HOTP** → HMAC-based one-time password
+  - **TOTP** → Time-based one-time password (secret key + current time → hash → OTP)
+- SMS codes: considered “something received” rather than possessed
+- Strengthens authentication when paired with other factors
+
+## Inherence-Based Authentication
+- Relies on unique physical traits of the person
+- Examples:
+  - **Fingerprints** → Common in smartphones and ePassports
+  - **Retinas/Irises** → Used in high-security systems
+  - **Facial Patterns** → Face ID recognition
+  - **Hand Measurements** → Palm or vein scanning
+  - **DNA** → Definitive identification, but rarely used in computer systems
+- These are **static/passive biometrics** (traits don’t change over time)
+
+
+## Single-Factor Authentication (SFA)
+- Uses only one form of identity verification
+- Example: **Username + Password**
+- Easier to implement but more vulnerable to compromise
+
+## Multi-Factor Authentication (MFA)
+- Requires two or more forms of verification
+- Example: **Bank Card (possession) + PIN (knowledge)**
+- Increases confidence in user identity
+- Makes it far less likely for attackers to compromise multiple factors
+- Often combined with other security techniques:
+  - Device identification
+  - Security hygiene enforcement
+  - Access control
+
+
+
+
+
