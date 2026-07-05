@@ -1,0 +1,85 @@
+  ## Objectives
+- Define single sign-on (SSO)
+- Describe how SSO works
+- Describe Security Assertion Markup Language (SAML)
+
+## Network Authentication & SSO
+- Balances **security vs. productivity**
+  - Too much security → frustrates users
+  - Too much productivity → increases risk
+- **True SSO** → User logs in once, gains access to multiple systems/domains without reauthentication
+- Works by passing an authentication token to other applications/sites that share a common mechanism
+
+## Same Sign-On
+- Similar to SSO but requires authentication for each application
+- Uses credentials stored in a **directory server**
+- Typically relies on **LDAP-compliant directory servers**
+- Entity uses the same credentials, but must reauthenticate per application
+
+## Enterprise & Cloud SSO
+- Common in enterprises where users access multiple resources across a network
+- Widely used in cloud environments spanning multiple domains and autonomous networks
+- Example: **Spotify login**
+  - Authenticate using credentials from **Facebook, Apple, or Google**
+  - Works due to trust relationships between these businesses
+- Roles:
+  - **Identity Provider (IdP)** → e.g., Google (holds user credentials)
+  - **Service Provider (SP)** → e.g., Spotify (relies on IdP for authentication)
+- IdP ↔ SP trust relationships are common across the internet today
+
+## Advantages of SSO
+- Eliminates need to remember multiple credentials
+- Convenient for users, reduces administrative overhead
+- Simplifies compliance and reporting via centralized databases
+- Improves productivity and user experience
+
+## Disadvantages of SSO
+- If credentials are compromised, attacker gains access to all resources
+- Creates a single point of failure
+- Requires strong security measures to mitigate risks
+
+## SSO + MFA
+- Combining SSO with multi-factor authentication strengthens security
+- Maintains productivity and ease of use while reducing compromise risk
+
+## How SSO Works
+- Requires three components: **Identity Provider (IdP), Service Provider (SP), and User**
+- Steps:
+  1. User connects to the SP (website or application)
+  2. SP redirects the user to the IdP login page
+  3. User provides credentials and authenticates with the IdP
+  4. IdP generates an authentication token (contains facts about authentication + optional content)
+  5. User is sent back to the SP, where the token serves as proof of authentication
+
+## SAML (Security Assertion Markup Language)
+- Protocol used to implement SSO (alongside OAuth)
+- **SAML v2** → Open standard for exchanging authentication & authorization data
+- Based on **XML** → Inserts statements called **security assertions**
+
+### Types of Security Assertions
+- **Authentication Assertion** → How/when the entity authenticated  
+  - Example: Omar authenticated using email + password
+- **Attribute Assertion** → Provides extra information about the entity  
+  - Example: Omar is a gold card member
+- **Authorization Assertion** → Identifies what the entity is entitled to do
+
+### Notes
+- Assertions are often optional → implementations vary
+- IdP may only handle authentication, leaving SP to determine entitlements
+
+## Example: SAML Login with FortiAuthenticator
+- **Principal (Entity)** → User (e.g., Omar)
+- **Service Provider (SP)** → Application/site requesting access
+- **Identity Provider (IdP)** → FortiAuthenticator
+
+### Steps
+1. Principal connects to the SP
+2. SP requests SAML assertions from the principal
+3. Principal has no valid token (not authenticated or token expired)
+4. SP redirects principal to the IdP (FortiAuthenticator)
+5. Application requests a SAML assertion for the SP
+6. IdP prompts principal for credentials
+7. FortiAuthenticator verifies credentials using an authentication server
+8. IdP provides an **authentication assertion** to the SP
+9. Principal’s application is redirected to the SP and to the originally requested resources (if entitled)
+
